@@ -189,9 +189,33 @@ console.log('Task 4', brit.demo('Javascript'), brit.grade(kim, 'Javascript'));
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 class Student extends Lambdasian{
-  // constructor()
-   
+  constructor(attributes) {
+    super(attributes);
+    this.previousBackground = attributes.previousBackground;
+    this.className = attributes.className;
+    this.favSubjects = attributes.favSubjects;
+  }
+   listSubjects(){
+    return `Loving ${this.favSubjects}!`;
+   }
+   PRAssignment(subject){
+    return `${this.name} has submitted a PR for ${subject}.`
+   }
+   sprintChallenge(subject){
+     return `${this.name} has begun sprint challenge on ${subject}.`
+   }
 }
+
+const kim3 = new Student({
+  name: 'Kim',
+  age: 42,
+  location: 'San Francisco',
+  previousBackground: 'Banking Compliance and stay-at-home mom',
+  className: 'WEB50',
+  favSubjects: ['HTML', 'CSS', 'JS']
+});
+ 
+console.log('Task 5', kim3.listSubjects(), kim3.PRAssignment('JS'), kim3.sprintChallenge('JS Classes'));
 
 /*
   TASK 6
