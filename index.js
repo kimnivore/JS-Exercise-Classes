@@ -172,7 +172,7 @@ const brit = new Instructor ({
   catchPhrase: 'Any questions?'
 });
 
-console.log('Task 4', brit.demo('Javascript'), brit.grade(kim, 'Javascript'));
+console.log('Task 4', brit.speak(), brit.demo('Javascript'), brit.grade(kim, 'Javascript'));
 /*
   TASK 5
     - Write a Student class extending Lambdasian.
@@ -215,7 +215,7 @@ const kim3 = new Student({
   favSubjects: ['HTML', 'CSS', 'JS']
 });
  
-console.log('Task 5', kim3.listSubjects(), kim3.PRAssignment('JS'), kim3.sprintChallenge('JS Classes'));
+console.log('Task 5', kim3.speak(), kim3.listSubjects(), kim3.PRAssignment('JS'), kim3.sprintChallenge('JS Classes'));
 
 /*
   TASK 6
@@ -254,7 +254,7 @@ const keane = new ProjectManager({
   favInstructor: 'Ms. Elaine'
 });
 
-console.log('Task 6', keane.demo('playdough'), keane.grade(kim, 'playdough'), keane.standUp('KidsWhoCode'), keane.debugsCode(kim, 'JSS'));
+console.log('Task 6', keane.speak(), keane.demo('playdough'), keane.grade(kim, 'playdough'), keane.standUp('KidsWhoCode'), keane.debugsCode(kim, 'JSS'));
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
