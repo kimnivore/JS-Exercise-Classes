@@ -124,7 +124,7 @@ class Lambdasian {
     this.location = attributes.location;
   }
   speak(){
-    return `Hello my name is ${this.name}, I am from ${this.location}`;
+    return `Hello my name is ${this.name}, I am from ${this.location}.`;
   }
 }
 const kim1 = new Lambdasian({
@@ -159,7 +159,7 @@ class Instructor extends Lambdasian{
     return `Today we are learning about ${subject}. `
   }
   grade(student, subject){
-    return `${student.name} receives a perfect score on ${subject}`
+    return `${student.name} receives a perfect score on ${subject}.`
   }
 }
 
@@ -230,9 +230,31 @@ console.log('Task 5', kim3.listSubjects(), kim3.PRAssignment('JS'), kim3.sprintC
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
-   
+class ProjectManager extends Instructor{
+   constructor(attributes){
+     super(attributes);
+     this.gradClassName = attributes.gradClassName;
+     this.favInstructor = attributes.favInstructor;
+   }
+   standUp(slack){
+    return `${this.name} announces to the ${slack} @channel study times!`
+   }
+   debugsCode(student, subject){
+    return `${this.name} debugs ${student.name}'s code on ${subject}.'`
+   }
 }
+const keane = new ProjectManager({
+  name: 'Keane',
+  age: 5,
+  location: 'San Francisco',
+  specialty: 'Math',
+  favLanguage: 'English',
+  catchPhrase: 'How do we...?',
+  gradClassName: 'TK',
+  favInstructor: 'Ms. Elaine'
+});
+
+console.log('Task 6', keane.demo('playdough'), keane.grade(kim, 'playdough'), keane.standUp('KidsWhoCode'), keane.debugsCode(kim, 'JSS'));
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
